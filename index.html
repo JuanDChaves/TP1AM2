@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <link rel="stylesheet" href="style.css">
+    <title>ESTEREOTIP@S</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="title-bar">
+            <div class="title-bar-text">ESTEREOTIP@S</div>
+            <div class="title-bar-controls">
+                <div id="help-btn" class="help-btn">
+                    <button aria-label="Help" id="help"></button>
+                </div>
+                <div id="close-btn" class="close-btn">
+                    <button aria-label="Close" id="close"></button>
+                </div>
+            </div>
+        </div>
+        <h2><span class="estado-actual" id="estado-actual"></span></h2>
+
+        <!-- Primer grupo de ventanas -->
+        <!-- Frase -->
+        <div class="window ventana-oculta ventana" id="ventana-frase">
+            <div class="title-bar">
+                <div class="title-bar-text">Una ventana</div>
+            </div>
+            <div class="window-body">
+                <p id="contenido"><span class="elemento-activo frase" id="frase-elemento"></span></p>
+            </div>
+        </div>
+        <!-- Imagen -->
+        <div class="window ventana-oculta ventana" id="ventana-imagen">
+            <div class="title-bar">
+                <div class="title-bar-text">Una ventana</div>
+            </div>
+            <div class="window-body">
+                <span class="elemento-activo imagen" id="imagen-elemento"></span>
+            </div>
+        </div>
+        <!-- Video/Gif -->
+        <div class="window ventana-oculta ventana" id="ventana-video">
+            <div class="title-bar">
+                <div class="title-bar-text">Una ventana</div>
+            </div>
+            <div class="window-body">
+                <span class="elemento-activo video" id="video-elemento"></span>
+            </div>
+        </div>
+
+    </div>
+    <button id="dale-bro" class="dale-bro">DALE BRO</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

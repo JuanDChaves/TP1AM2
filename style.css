@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+.logo {
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    margin: 0;
+    background-image: url("./bg/index.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 95vh;
+    transition: all 0.5s ease;
+}
+
+.title-bar {
+    height: 20px;
+}
+
+.title-bar-controls {
+    transform: translateY(-25%);
+}
+
+.help-btn {
+    cursor: pointer;
+}
+
+.display {
+    position: relative;
+}
+
+.window .window-body img {
+    width: 100%;
+}
+
+.boton {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: calc(100vh - 60px);
+    text-align: center;
+    z-index: 1000;
+}
+
+.boton .est-texto-btn {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.estado-actual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ventana {
+    width: 280x;
+    position: absolute;
+    cursor: pointer;
+}
+
+.ventana-oculta {
+    display: none;
+}
+
+span.imagen, span.video {
+    height: 50px;
+    width: 50px;
+}
+
+span.imagen {
+    background-color: cyan;
+}
+
+span.video {
+    background-color: purple;
+}
