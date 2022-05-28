@@ -56,6 +56,7 @@ const videos = ["video 1", "video 2", "video 3", "video 4", "video 5"];
 // Funciones
 function iniciar() {
     daleBro.disabled = true;
+    daleBro.style.display = "none";
     container.style.backgroundColor = "#4682b4"
     container.style.backgroundImage = "url('./bg/1.png')";
     container.style.height = "100vh";
@@ -135,7 +136,11 @@ function masCosas() {
                 <div class="title-bar-text">Una ventana</div>
             </div>
             <div class="window-body">
-                <p id="contenido"><span class="elemento-activo frase" onclick = "siguienteEstado()" id="frase-elemento">${estereotipo}</span></p>
+                <p class="frase-container"><span class="elemento-activo frase" onclick = "siguienteEstado()" id="frase-elemento">${estereotipo}</span></p>
+                <div class="ok-cancel-btns">
+                    <button class="ok-btn">Ok</button>
+                    <button class="cancel-btn">Cancel</button>
+                </div>
             </div>
         </div>
       `;
@@ -160,7 +165,12 @@ function masCosas() {
                 <div class="title-bar-text">Una ventana</div>
             </div>
             <div class="window-body">
-                <p id="contenido"><span class="elemento-activo frase" onclick = "siguienteEstado()" id="frase-elemento">${imagenes[Math.floor(Math.random() * imagenes.length)]}</span></p>
+                <div class="elemento-activo imagen-container" id="imagen-elemento"><img onclick = "siguienteEstado()" class="imagen-1"
+                        alt="PlEIS JOLDER">${imagenes[Math.floor(Math.random() * imagenes.length)]}</div>
+                <div class="ok-cancel-btns">
+                    <button class="ok-btn">Ok</button>
+                    <button class="cancel-btn">Cancel</button>
+                </div>
             </div>
         </div>
       `;
@@ -185,7 +195,12 @@ function masCosas() {
                 <div class="title-bar-text">Una ventana</div>
             </div>
             <div class="window-body">
-                <p id="contenido"><span class="elemento-activo frase" onclick = "siguienteEstado()" id="frase-elemento">${videos[Math.floor(Math.random() * videos.length)]}</span></p>
+                <div class="elemento-activo video-container" id="video-elemento"><img onclick = "siguienteEstado()" class="video-1"
+                        alt="PlEIS JOLDER">${videos[Math.floor(Math.random() * videos.length)]}</div>
+                <div class="ok-cancel-btns">
+                    <button class="ok-btn">Ok</button>
+                    <button class="cancel-btn">Cancel</button>
+                </div>
             </div>
         </div>
       `;
