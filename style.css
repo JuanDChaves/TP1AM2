@@ -84,6 +84,7 @@ body {
     height: 300px;
     overflow: scroll;
     background-color: #000;
+    color: #fff;
 }
 
 .video-container {
@@ -92,6 +93,7 @@ body {
     height: 300px;
     overflow: scroll;
     background-color: #000;
+    color: #fff;
 }
 
 .estado-actual {
