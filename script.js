@@ -101,7 +101,7 @@ function aparecenCosas() {
     
     // Crear primer video 
     setNewValues(); 
-    videoEl.innerText = videos[Math.floor(Math.random() * videos.length)];
+    // videoEl.innerText = videos[Math.floor(Math.random() * videos.length)];
     ventanaVideo.style.top = `${topRandom}px`;
     ventanaVideo.style.left = `${leftRandom}px`;
     videoEl.addEventListener("click", e => {
@@ -125,6 +125,66 @@ function masCosas() {
     // Bloquear los primeros elementos 
     elementoActivo.forEach(elemento => {
         elemento.removeEventListener("click", masCosas);;
+    });
+    
+    // Crear segunda imagen
+    setNewValues();
+    imagenEl2 = document.createElement("div");
+    imagenEl2.innerHTML = `
+    <div class="window ventana" id="ventana-frase" style="position:absolute;top:${topRandom}px;left:${leftRandom}px">
+    <div class="title-bar">
+    <div class="title-bar-text">Una ventana</div>
+    </div>
+    <div class="window-body">
+    <div class="elemento-activo imagen-container" id="imagen-elemento"><img onclick = "siguienteEstado()" class="imagen-1"
+    alt="PlEIS JOLDER">${imagenes[Math.floor(Math.random() * imagenes.length)]}</div>
+    <div class="ok-cancel-btns">
+    <button class="ok-btn">Ok</button>
+    <button class="cancel-btn">Cancel</button>
+    </div>
+    </div>
+    </div>
+    `;
+    imagenEl2.style.width = "500px";
+    imagenEl2.style.height = "50px";
+    container.appendChild(imagenEl2);
+    imagenEl2.addEventListener("click", e => {
+        if(perfilUsuario.includes(e.target.innerText)) {
+            console.log("Ya esta " + e.target.innerText);
+        } else {
+            perfilUsuario.push(e.target.innerText);
+            console.log(perfilUsuario);
+        }   
+    });
+    
+    // Crear segundo video 
+    setNewValues();
+    videoEl2 = document.createElement("div");
+    videoEl2.innerHTML = `
+    <div class="window ventana" id="ventana-frase" style="position:absolute;top:${topRandom}px;left:${leftRandom}px">
+    <div class="title-bar">
+    <div class="title-bar-text">Una ventana</div>
+    </div>
+    <div class="window-body">
+    <div class="elemento-activo video-container" id="video-elemento"><img onclick = "siguienteEstado()" class="video-1"
+    alt="PlEIS JOLDER">${videos[Math.floor(Math.random() * videos.length)]}</div>
+    <div class="ok-cancel-btns">
+    <button class="ok-btn">Ok</button>
+    <button class="cancel-btn">Cancel</button>
+    </div>
+    </div>
+    </div>
+    `;
+    videoEl2.style.width = "50px"; 
+    videoEl2.style.height = "50px";
+    container.appendChild(videoEl2);
+    videoEl2.addEventListener("click", e => {
+        if(perfilUsuario.includes(e.target.innerText)) {
+            console.log("Ya esta " + e.target.innerText);
+        } else {
+            perfilUsuario.push(e.target.innerText);
+            console.log(perfilUsuario);
+        }   
     });
     // Crear segunda frase
     setNewValues();
@@ -155,66 +215,6 @@ function masCosas() {
         }   
         });
      decirFrase();
-      
-      // Crear segunda imagen
-      setNewValues();
-      imagenEl2 = document.createElement("div");
-      imagenEl2.innerHTML = `
-        <div class="window ventana" id="ventana-frase" style="position:absolute;top:${topRandom}px;left:${leftRandom}px">
-            <div class="title-bar">
-                <div class="title-bar-text">Una ventana</div>
-            </div>
-            <div class="window-body">
-                <div class="elemento-activo imagen-container" id="imagen-elemento"><img onclick = "siguienteEstado()" class="imagen-1"
-                        alt="PlEIS JOLDER">${imagenes[Math.floor(Math.random() * imagenes.length)]}</div>
-                <div class="ok-cancel-btns">
-                    <button class="ok-btn">Ok</button>
-                    <button class="cancel-btn">Cancel</button>
-                </div>
-            </div>
-        </div>
-      `;
-      imagenEl2.style.width = "500px";
-      imagenEl2.style.height = "50px";
-      container.appendChild(imagenEl2);
-      imagenEl2.addEventListener("click", e => {
-        if(perfilUsuario.includes(e.target.innerText)) {
-            console.log("Ya esta " + e.target.innerText);
-        } else {
-            perfilUsuario.push(e.target.innerText);
-            console.log(perfilUsuario);
-        }   
-        });
-  
-      // Crear segundo video 
-      setNewValues();
-      videoEl2 = document.createElement("div");
-      videoEl2.innerHTML = `
-        <div class="window ventana" id="ventana-frase" style="position:absolute;top:${topRandom}px;left:${leftRandom}px">
-            <div class="title-bar">
-                <div class="title-bar-text">Una ventana</div>
-            </div>
-            <div class="window-body">
-                <div class="elemento-activo video-container" id="video-elemento"><img onclick = "siguienteEstado()" class="video-1"
-                        alt="PlEIS JOLDER">${videos[Math.floor(Math.random() * videos.length)]}</div>
-                <div class="ok-cancel-btns">
-                    <button class="ok-btn">Ok</button>
-                    <button class="cancel-btn">Cancel</button>
-                </div>
-            </div>
-        </div>
-      `;
-      videoEl2.style.width = "50px"; 
-      videoEl2.style.height = "50px";
-      container.appendChild(videoEl2);
-      videoEl2.addEventListener("click", e => {
-        if(perfilUsuario.includes(e.target.innerText)) {
-            console.log("Ya esta " + e.target.innerText);
-        } else {
-            perfilUsuario.push(e.target.innerText);
-            console.log(perfilUsuario);
-        }   
-        });
 }
 
 // Desaparecer primer grupo de datos
