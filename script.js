@@ -20,6 +20,10 @@ let imagenEl2;
 let videoEl2;
 
 
+let perfilUsuarioFrase = [];
+let perfilUsuarioImagen = [];
+let perfilUsuarioVideo = [];
+
 let perfilUsuario = [];
 
 let estado = 1;
@@ -49,8 +53,26 @@ const frases = [
     "Yo soy feminista porque ayudo",
     "Amiga, soy tu Aliade"
 ];
-const imagenes = ["imagen 1", "imagen 2", "imagen 3", "imagen 4", "imagen 5"];
-const videos = ["video 1", "video 2", "video 3", "video 4", "video 5"];
+
+const imagenes = [
+    "monkeys.gif", 
+    "vapor.gif", 
+    "caretas.gif", 
+    "cerebro.png", 
+    "cerveza.png", 
+    "caminando-rueda.gif", 
+    "caminando-rueda-oculus.gif",
+    "corriendo-solo.gif",
+    "tipo-rojo.gif"
+];
+
+const videos = [
+    "cine.mp4",
+    "olimpicos.mp4",
+    "olimpicos2.mp4",
+    "peleando.mp4",
+    "phone.mp4"
+];
 
 
 // Funciones
@@ -77,39 +99,40 @@ function aparecenCosas() {
     setTextoFrase(estereotipo);
     decirFrase();
     fraseEl.addEventListener("click", e => {
-        if(perfilUsuario.includes(e.target.innerText)) {
+        if(perfilUsuarioFrase.includes(e.target.innerText)) {
             console.log("Ya esta " + e.target.innerText);
         } else {
-            perfilUsuario.push(e.target.innerText);
+            perfilUsuarioFrase.push(e.target.innerText);
             console.log(perfilUsuario);
         }   
     });
     
     // Crear primera imagen
     setNewValues(); 
-    imagenEl.innerText = imagenes[Math.floor(Math.random() * imagenes.length)];
+    imagenEl.firstChild.src = `./img/${imagenes[Math.floor(Math.random() * imagenes.length)]}`;
     ventanaImagen.style.top = `${topRandom}px`;
     ventanaImagen.style.left = `${leftRandom}px`;
     imagenEl.addEventListener("click", e => {
-        if(perfilUsuario.includes(e.target.innerText)) {
-            console.log("Ya esta " + e.target.innerText);
+        if(perfilUsuarioImagen.includes(e.target.src.split("img")[1])) {
+            console.log("Ya esta");
         } else {
-            perfilUsuario.push(e.target.innerText);
-            console.log(perfilUsuario);
+            perfilUsuarioImagen.push(e.target.src.split("img")[1]);
+            console.log(perfilUsuarioImagen);
         }   
     });
     
     // Crear primer video 
     setNewValues(); 
+    videoEl.src = `./video/${videos[Math.floor(Math.random() * videos.length)]}`;
     // videoEl.innerText = videos[Math.floor(Math.random() * videos.length)];
     ventanaVideo.style.top = `${topRandom}px`;
     ventanaVideo.style.left = `${leftRandom}px`;
     videoEl.addEventListener("click", e => {
-        if(perfilUsuario.includes(e.target.innerText)) {
-            console.log("Ya esta " + e.target.innerText);
+        if(perfilUsuarioVideo.includes(e.target.src.split("video")[1])) {
+            console.log("Ya esta ");
         } else {
-            perfilUsuario.push(e.target.innerText);
-            console.log(perfilUsuario);
+            perfilUsuarioVideo.push(e.target.src.split("video")[1]);
+            console.log(perfilUsuarioVideo);
         }   
     });
     
@@ -136,8 +159,8 @@ function masCosas() {
     <div class="title-bar-text">Una ventana</div>
     </div>
     <div class="window-body">
-    <div class="elemento-activo imagen-container" id="imagen-elemento"><img onclick = "siguienteEstado()" class="imagen-1"
-    alt="PlEIS JOLDER">${imagenes[Math.floor(Math.random() * imagenes.length)]}</div>
+    <div class="elemento-activo imagen-container" id="imagen-elemento"><img onclick="siguienteEstado()" class="imagen"
+    alt="PlEIS JOLDER" src="./img/${imagenes[Math.floor(Math.random() * imagenes.length)]}"></div>
     <div class="ok-cancel-btns">
     <button class="ok-btn">Ok</button>
     <button class="cancel-btn">Cancel</button>
@@ -149,11 +172,11 @@ function masCosas() {
     imagenEl2.style.height = "50px";
     container.appendChild(imagenEl2);
     imagenEl2.addEventListener("click", e => {
-        if(perfilUsuario.includes(e.target.innerText)) {
-            console.log("Ya esta " + e.target.innerText);
+        if(perfilUsuarioImagen.includes(e.target.src.split("img")[1])) {
+            console.log("Ya esta " + e.target.src.split("img")[1]);
         } else {
-            perfilUsuario.push(e.target.innerText);
-            console.log(perfilUsuario);
+            perfilUsuarioImagen.push(e.target.src.split("img")[1]);
+            console.log(perfilUsuarioImagen);
         }   
     });
     
@@ -166,8 +189,8 @@ function masCosas() {
     <div class="title-bar-text">Una ventana</div>
     </div>
     <div class="window-body">
-    <div class="elemento-activo video-container" id="video-elemento"><img onclick = "siguienteEstado()" class="video-1"
-    alt="PlEIS JOLDER">${videos[Math.floor(Math.random() * videos.length)]}</div>
+    <div class="elemento-activo video-container" id="video-elemento">
+    <video class="video" id="video-elemento" width="320" height="240" autoplay loop muted onclick="siguienteEstado()" src="./video/${videos[Math.floor(Math.random() * videos.length)]}"></video>
     <div class="ok-cancel-btns">
     <button class="ok-btn">Ok</button>
     <button class="cancel-btn">Cancel</button>
@@ -178,14 +201,16 @@ function masCosas() {
     videoEl2.style.width = "50px"; 
     videoEl2.style.height = "50px";
     container.appendChild(videoEl2);
+
     videoEl2.addEventListener("click", e => {
-        if(perfilUsuario.includes(e.target.innerText)) {
-            console.log("Ya esta " + e.target.innerText);
+        if(perfilUsuarioVideo.includes(e.target.src.split("video")[1])) {
+            console.log("Ya esta ");
         } else {
-            perfilUsuario.push(e.target.innerText);
-            console.log(perfilUsuario);
+            perfilUsuarioVideo.push(e.target.src.split("video")[1]);
+            console.log(perfilUsuarioVideo);
         }   
     });
+
     // Crear segunda frase
     setNewValues();
     const estereotipo = frases[Math.floor(Math.random() * frases.length)];
@@ -207,10 +232,10 @@ function masCosas() {
       container.appendChild(fraseEl2);
       setTextoFrase(estereotipo);
       fraseEl2.addEventListener("click", e => {
-        if(perfilUsuario.includes(e.target.innerText)) {
+        if(perfilUsuarioFrase.includes(e.target.innerText)) {
             console.log("Ya esta " + e.target.innerText);
         } else {
-            perfilUsuario.push(e.target.innerText);
+            perfilUsuarioFrase.push(e.target.innerText);
             console.log(perfilUsuario);
         }   
         });
@@ -262,10 +287,30 @@ function siguienteEstado() {
         borrarDatos2();
         container.style.backgroundColor = "#000";
         container.style.color = "white";
-        const perfil = document.createElement("p");
-        perfil.textContent = "AQUI VA EL PERFIL";
-        perfil.style.fontSize = "3em";
-        container.appendChild(perfil);
+        
+        perfilUsuarioFrase.forEach((frase) => {
+            const frasePerfil = document.createElement("p");
+            frasePerfil.innerText = frase;
+            frasePerfil.style.color = "white";
+            frasePerfil.style.fontSize = "3em";
+            container.appendChild(frasePerfil);
+        });
+
+        perfilUsuarioImagen.forEach((imagen) => {
+            const imagenPerfil = document.createElement("img");
+            imagenPerfil.src = `./img${imagen}`;
+            imagenPerfil.style.width = "200px";
+            imagenPerfil.style.height = "200px";
+            container.appendChild(imagenPerfil);
+        });
+
+        perfilUsuarioVideo.forEach((video) => {
+            const videoPerfil = document.createElement("video");
+            videoPerfil.src = `./video${video}`;
+            videoPerfil.style.width = "200px";
+            videoPerfil.style.height = "200px";
+            container.appendChild(videoPerfil);
+        });  
     }
 }
 
