@@ -309,6 +309,9 @@ function siguienteEstado() {
             videoPerfil.src = `./video${video}`;
             videoPerfil.style.width = "200px";
             videoPerfil.style.height = "200px";
+            videoPerfil.autoplay = true;
+            videoPerfil.loop = true;
+            videoPerfil.muted = true;
             container.appendChild(videoPerfil);
         });  
     }
