@@ -33,6 +33,16 @@ let estado = 1;
 let topRandom;
 let leftRandom;
 
+let videoBg;
+
+let pizza;
+let logo;
+let ventanaFija1;
+let ventanaFija2;
+let ventanaFija3;
+
+
+
 const frases = [
     "Me considero biológicamente más fuerte que una mujer",
     "Soy una persona que toma la iniciativa",
@@ -81,11 +91,66 @@ const videos = [
 function iniciar() {
     daleBro.disabled = true;
     daleBro.style.display = "none";
-    container.style.backgroundColor = "#4682b4"
-    container.style.backgroundImage = "url('./bg/1.png')";
-    container.style.height = "100vh";
-
     elementosIndex.style.display = "none";
+    container.backgroundImage = false;
+    videoBg = document.createElement("video");
+        videoBg.src = "./bg/clouds.mp4";
+        videoBg.style.position = "fixed";
+        videoBg.style.right = "0";
+        videoBg.style.bottom = "0";
+        videoBg.style.minWidth = "100%";
+        videoBg.style.minHeight = "100%";
+        videoBg.autoplay = true;
+        videoBg.loop = true;
+        videoBg.muted = true;
+        videoBg.style.zIndex = "-1";
+    container.appendChild(videoBg);
+
+    pizza = document.createElement("img");
+        pizza.src = "./img-layout/pizza.png";
+        pizza.classList.add("pizza");
+        pizza.style.width = "180px"
+        pizza.style.bottom = "55%";
+        pizza.style.left = "85%";
+        pizza.style.zIndex = "-1";
+        container.appendChild(pizza);
+
+    logo = document.createElement("img");
+        logo.src = "./img-layout/logo estereotip@s.png";
+        logo.classList.add("logo");
+        logo.style.width = "180px"
+        logo.style.top = "15%";
+        logo.style.left = "10%";
+        logo.style.zIndex = "-1";
+        container.appendChild(logo);
+
+    ventanaFija1 = document.createElement("img");
+        ventanaFija1.style.position = "absolute";
+        ventanaFija1.src = "./img-layout/Recurso32.png";
+        ventanaFija1.style.width = "300px"
+        ventanaFija1.style.top = "30%";
+        ventanaFija1.style.left = "15%";
+        ventanaFija1.style.zIndex = "-1";
+        container.appendChild(ventanaFija1);
+
+    ventanaFija2 = document.createElement("img");
+        ventanaFija2.style.position = "absolute";
+        ventanaFija2.src = "./img-layout/Recurso33.png";
+        ventanaFija2.style.width = "300px"
+        ventanaFija2.style.top = "35%";
+        ventanaFija2.style.left = "40%";
+        ventanaFija2.style.zIndex = "-1";
+        container.appendChild(ventanaFija2);
+
+    ventanaFija3 = document.createElement("img");
+        ventanaFija3.style.position = "absolute";
+        ventanaFija3.src = "./img-layout/Recurso34.png";
+        ventanaFija3.style.width = "320px"
+        ventanaFija3.style.top = "33%";
+        ventanaFija3.style.left = "65%";
+        ventanaFija3.style.zIndex = "-1";
+        container.appendChild(ventanaFija3);
+
 
     aparecenCosas();
 }
@@ -266,6 +331,12 @@ function siguienteEstado() {
     estado++;
     if (estado === 2) {
         borrarDatos2();
+        container.removeChild(videoBg);
+        logo.style.display = "none";
+        pizza.style.display = "none";
+        ventanaFija1.style.display = "none";
+        ventanaFija2.style.display = "none";
+        ventanaFija3.style.display = "none";
         container.style.backgroundImage = "url('./bg/2.png')";
         aparecenCosas();
         elementoActivo.forEach(elemento => {
