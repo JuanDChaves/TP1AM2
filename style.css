@@ -138,6 +138,83 @@ body {
     left: 10%;
 }
 
+/* ESTADO 2 */
+
+.texto-azul {
+    max-width: 350px;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}
+.compra {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+.ko {
+    position: absolute;
+    max-width: 500px;
+    bottom: 6%;
+    left: 5%;
+}
+.coca {
+    position: absolute;
+    max-width: 1000px;
+    bottom: 0;
+    right: 5%;
+}
+.carne {
+    position: absolute;
+    max-width: 600px;
+    top: 5%;
+    left: 25%;
+}
+.callate {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+}
+.elementos-estado2.oculta {
+    display: none;
+}
+
+/* ESTADO 3 */
+
+.gota {
+    max-height: 250px;
+    position: absolute;
+    top: 60%;
+    right: 50%;
+}
+.elegir-color {
+    max-width: 280px;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}
+.caminando {
+    position: absolute;
+    max-width: 600px;
+    bottom: 10%;
+    right: 5%;
+}
+.corriendo {
+    position: absolute;
+    max-width: 250px;
+    bottom: 7%;
+    left: 15%;
+}
+.reloj {
+    position: absolute;
+    max-width: 300px;
+    top: 5%;
+    left: 5%;
+}
+
+.elementos-estado3.oculta {
+    display: none;
+}
+
 /* Botones */
 
 .dale-bro {

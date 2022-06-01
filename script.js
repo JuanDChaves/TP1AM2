@@ -17,6 +17,8 @@ const elementoActivo = document.querySelectorAll(".elemento-activo");
 
 const elementosIndex = document.getElementById("elementos-index");
 const instalar = document.getElementById("ayuda-instalar");
+const elementosEstado2 = document.getElementById("elementos-estado2");
+const elementosEstado3 = document.getElementById("elementos-estado3");
 
 let fraseEl2;
 let imagenEl2;
@@ -338,13 +340,16 @@ function siguienteEstado() {
         ventanaFija1.style.display = "none";
         ventanaFija2.style.display = "none";
         ventanaFija3.style.display = "none";
-        container.style.backgroundImage = "url('./bg/2.png')";
+        container.style.backgroundImage = "url('./bg/recurso21.png')";
+        elementosEstado2.classList.remove("oculta");
         aparecenCosas();
         elementoActivo.forEach(elemento => {
             elemento.addEventListener("click", masCosas);
         });
     } else if (estado === 3) {
         borrarDatos2();
+        elementosEstado2.classList.add("oculta");
+        elementosEstado3.classList.remove("oculta");
         container.style.backgroundImage = "url('./bg/3.png')";
         aparecenCosas();
         elementoActivo.forEach(elemento => {
