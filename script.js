@@ -15,6 +15,8 @@ const imagenEl = document.getElementById("imagen-elemento");
 const videoEl = document.getElementById("video-elemento");
 const elementoActivo = document.querySelectorAll(".elemento-activo");
 
+const elementosIndex = document.getElementById("elementos-index");
+
 let fraseEl2;
 let imagenEl2;
 let videoEl2;
@@ -82,6 +84,8 @@ function iniciar() {
     container.style.backgroundColor = "#4682b4"
     container.style.backgroundImage = "url('./bg/1.png')";
     container.style.height = "100vh";
+
+    elementosIndex.style.display = "none";
 
     aparecenCosas();
 }
@@ -287,12 +291,12 @@ function siguienteEstado() {
         borrarDatos2();
         container.style.backgroundColor = "#000";
         container.style.color = "white";
-        
+
         perfilUsuarioFrase.forEach((frase) => {
             const frasePerfil = document.createElement("p");
             frasePerfil.innerText = frase;
             frasePerfil.style.color = "white";
-            frasePerfil.style.fontSize = "3em";
+            frasePerfil.style.fontSize = "2em";
             container.appendChild(frasePerfil);
         });
 
