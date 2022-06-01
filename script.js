@@ -16,6 +16,7 @@ const videoEl = document.getElementById("video-elemento");
 const elementoActivo = document.querySelectorAll(".elemento-activo");
 
 const elementosIndex = document.getElementById("elementos-index");
+const instalar = document.getElementById("ayuda-instalar");
 
 let fraseEl2;
 let imagenEl2;
@@ -363,6 +364,15 @@ function siguienteEstado() {
         container.style.backgroundColor = "#000";
         container.style.color = "white";
 
+        const max = document.createElement("video");
+        max.src = "./img-layout/maxheadroom.mp4";
+        max.style.width = "400px";
+        max.style.height = "400px";
+        max.autoplay = true;
+        max.loop = true;
+        max.muted = false;
+        container.appendChild(max);
+
         perfilUsuarioFrase.forEach((frase) => {
             const frasePerfil = document.createElement("p");
             frasePerfil.innerText = frase;
@@ -421,11 +431,12 @@ function decirFrase() {
 // Funciones de los botones de arriba a la derecha
 
 function clickEnHelp() {
-    alert("Ayuda");
+    instalar.classList.toggle("oculta");
+    console.log('algo')
 }
 
 function clickEnClose() {
-    alert("Cerrar");
+    alert("LA SALIDA ES UNA FICCION");
 }
 
 // Event listeners

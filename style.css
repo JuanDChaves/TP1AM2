@@ -152,3 +152,16 @@ body {
     text-align: right;
     margin-top: 10px;
 }
+
+.ayuda-instalar {
+    position: absolute;
+    width: 450px;
+    top: 20px;
+    right: 60px;
+    z-index: 100;
+    border: grey 2px solid;
+}
+
+.ayuda-instalar.oculta {
+    display: none;
+}
