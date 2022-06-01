@@ -131,7 +131,7 @@ function iniciar() {
     ventanaFija1 = document.createElement("img");
         ventanaFija1.style.position = "absolute";
         ventanaFija1.src = "./img-layout/Recurso32.png";
-        ventanaFija1.style.width = "300px"
+        ventanaFija1.style.width = "0px"
         ventanaFija1.style.top = "30%";
         ventanaFija1.style.left = "15%";
         ventanaFija1.style.zIndex = "-1";
@@ -149,7 +149,7 @@ function iniciar() {
     ventanaFija3 = document.createElement("img");
         ventanaFija3.style.position = "absolute";
         ventanaFija3.src = "./img-layout/Recurso34.png";
-        ventanaFija3.style.width = "320px"
+        ventanaFija3.style.width = "0px"
         ventanaFija3.style.top = "33%";
         ventanaFija3.style.left = "65%";
         ventanaFija3.style.zIndex = "-1";
