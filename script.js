@@ -329,6 +329,11 @@ function borrarDatos2() {
     videoEl2.style.display = "none";
 }
 
+// Volver al principio
+function volver() {
+    location.reload();
+}
+
 // Cambio de estados
 
 function siguienteEstado() {
@@ -388,6 +393,8 @@ function siguienteEstado() {
         max.style.position = "absolute"
         max.style.top = "20%";
         max.style.left = "35%";
+        max.style.cursor = "pointer";
+        max.setAttribute("onclick", "volver()");
         max.autoplay = true;
         max.loop = true;
         max.muted = false;
@@ -418,7 +425,7 @@ function siguienteEstado() {
             videoPerfil.src = `./video${video}`;
             videoPerfil.style.width = "400px";
             videoPerfil.style.height = "400px";
-            videoPerfil.style.padding = "30px"
+            videoPerfil.style.padding = "30px";
             videoPerfil.autoplay = true;
             videoPerfil.loop = true;
             videoPerfil.muted = true;
@@ -457,7 +464,6 @@ function decirFrase() {
 
 function clickEnHelp() {
     instalar.classList.toggle("oculta");
-    console.log('algo')
 }
 
 function clickEnClose() {
