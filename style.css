@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono&display=swap');
+  
 
 * {
     box-sizing: border-box;
@@ -12,6 +13,8 @@ body {
     justify-content: center;
     margin: 0;
     overflow: hidden;
+    font-family: 'Roboto Mono', monospace;
+    font-family: "Press Start 2P", cursive;
 }
 
 .container {
@@ -64,8 +67,8 @@ body {
 
 .frase-container .frase {
     color: greenyellow;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 4em;
+    font-family: "Press Start 2P", cursive;
+    font-size: 2em;
     text-transform: lowercase;
     text-align: center;
     height: 100%;
@@ -212,6 +215,24 @@ body {
 }
 
 .elementos-estado3.oculta {
+    display: none;
+}
+/* ESTADO 4 */
+
+.andres {
+    max-height: 250px;
+    position: absolute;
+    top: 35%;
+    left: -3%;
+}
+.ventana-caminando {
+    max-width: 250px;
+    position: absolute;
+    top: 15%;
+    right: 7%;
+}
+
+.elementos-estado4.oculta {
     display: none;
 }
 

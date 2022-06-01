@@ -19,6 +19,7 @@ const elementosIndex = document.getElementById("elementos-index");
 const instalar = document.getElementById("ayuda-instalar");
 const elementosEstado2 = document.getElementById("elementos-estado2");
 const elementosEstado3 = document.getElementById("elementos-estado3");
+const elementosEstado4 = document.getElementById("elementos-estado4");
 
 let fraseEl2;
 let imagenEl2;
@@ -357,8 +358,9 @@ function siguienteEstado() {
         });
     } else if (estado === 4) {
         borrarDatos2();
-        container.style.backgroundImage = "none";
-        container.style.backgroundColor = "#3cb371";
+        elementosEstado3.classList.add("oculta");
+        elementosEstado4.classList.remove("oculta");
+        container.style.backgroundImage = "url('./bg/gifrelleno.gif')";
         aparecenCosas();
         elementoActivo.forEach(elemento => {
             elemento.addEventListener("click", masCosas);
@@ -366,43 +368,61 @@ function siguienteEstado() {
     } else {
         borrarDatos();
         borrarDatos2();
+        elementosEstado4.classList.add("oculta");
+        container.style.backgroundImage = "none";
         container.style.backgroundColor = "#000";
         container.style.color = "white";
+
+        const perfilCont = document.createElement("div");
+        perfilCont.style.display = "flex"
+        perfilCont.style.justifyContent = "space-around";
+        perfilCont.style.flexWrap = "wrap";
+        perfilCont.style.alignItems = "center";
+
+        container.appendChild(perfilCont);
 
         const max = document.createElement("video");
         max.src = "./img-layout/maxheadroom.mp4";
         max.style.width = "400px";
         max.style.height = "400px";
+        max.style.position = "absolute"
+        max.style.top = "20%";
+        max.style.left = "35%";
         max.autoplay = true;
         max.loop = true;
         max.muted = false;
-        container.appendChild(max);
+        perfilCont.appendChild(max);
+
 
         perfilUsuarioFrase.forEach((frase) => {
             const frasePerfil = document.createElement("p");
             frasePerfil.innerText = frase;
-            frasePerfil.style.color = "white";
+            frasePerfil.style.color = "greenyellow";
             frasePerfil.style.fontSize = "2em";
-            container.appendChild(frasePerfil);
+            frasePerfil.style.padding = "5px";
+            frasePerfil.style.margin = "0";
+            perfilCont.appendChild(frasePerfil);
         });
 
         perfilUsuarioImagen.forEach((imagen) => {
             const imagenPerfil = document.createElement("img");
             imagenPerfil.src = `./img${imagen}`;
-            imagenPerfil.style.width = "200px";
-            imagenPerfil.style.height = "200px";
-            container.appendChild(imagenPerfil);
+            imagenPerfil.style.width = "400px";
+            imagenPerfil.style.height = "400px";
+            imagenPerfil.style.padding = "30px"
+            perfilCont.appendChild(imagenPerfil);
         });
 
         perfilUsuarioVideo.forEach((video) => {
             const videoPerfil = document.createElement("video");
             videoPerfil.src = `./video${video}`;
-            videoPerfil.style.width = "200px";
-            videoPerfil.style.height = "200px";
+            videoPerfil.style.width = "400px";
+            videoPerfil.style.height = "400px";
+            videoPerfil.style.padding = "30px"
             videoPerfil.autoplay = true;
             videoPerfil.loop = true;
             videoPerfil.muted = true;
-            container.appendChild(videoPerfil);
+            perfilCont.appendChild(videoPerfil);
         });  
     }
 }
